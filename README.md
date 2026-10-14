@@ -32,7 +32,7 @@ curl -sL https://github.com/Viello/agent-skills/archive/refs/heads/main.tar.gz |
 
 ## Canonical Skills Index
 
-This repository currently distributes **41** canonical skills:
+This repository currently distributes **45** canonical skills:
 
 | Skill | Description |
 | :--- | :--- |
@@ -41,6 +41,7 @@ This repository currently distributes **41** canonical skills:
 | [clean-architecture](clean-architecture/SKILL.md) | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "ports and adapters (hexagonal)", "onion architecture", "screaming architecture", "where should business logic go", "decouple from the database", "swap the framework without a rewrite", or "keep business rules independent". Also trigger when deciding which layer code belongs in, isolating core logic from infrastructure, defining module boundaries, or debating whether the framework should call your code or the reverse. Covers component principles, boundaries, and SOLID. For code-level quality, see clean-code. For domain modeling, see domain-driven-design. |
 | [code-review](code-review/SKILL.md) | Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to "review since X". |
 | [codebase-design](codebase-design/SKILL.md) | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. |
+| [create-verification-skill](create-verification-skill/SKILL.md) | Inspect a target project directory and scaffold a tailored verify-<app> verification skill implementing the 5-step lifecycle contract, harness stubs, and feature maps. |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
 | [domain-modeling](domain-modeling/SKILL.md) | Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR. |
 | [git-guardrails-claude-code](git-guardrails-claude-code/SKILL.md) | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code. |
@@ -51,7 +52,9 @@ This repository currently distributes **41** canonical skills:
 | [implement](implement/SKILL.md) | Implement a piece of work based on a spec or set of tickets. |
 | [implement-spec](implement-spec/SKILL.md) | Implement a specification in code. |
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick. |
+| [live-qa](live-qa/SKILL.md) | Human-driven live verification: the human drives the running app through scenarios while the agent records verdicts as durable evidence. |
 | [loop-me](loop-me/SKILL.md) | Grill me about specs for the workflows I want to build, within this workspace. |
+| [maintain-verification-skill](maintain-verification-skill/SKILL.md) | Audit and synchronize a project's verify-<app> verification skill and feature maps against active source code to prevent documentation and harness rot. |
 | [migrate-to-shoehorn](migrate-to-shoehorn/SKILL.md) | Migrate test files from `as` type assertions to @total-typescript/shoehorn. Use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data. |
 | [prototype](prototype/SKILL.md) | Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. |
 | [research](research/SKILL.md) | Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent. |
@@ -62,8 +65,9 @@ This repository currently distributes **41** canonical skills:
 | [setup-matt-pocock-skills](setup-matt-pocock-skills/SKILL.md) | Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills. |
 | [setup-pre-commit](setup-pre-commit/SKILL.md) | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing. |
 | [setup-ts-deep-modules](setup-ts-deep-modules/SKILL.md) | Wire dependency-cruiser into a TypeScript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. User-invoked. |
-| [smoke-fail](smoke-fail/SKILL.md) | Triage a failed smoke scenario and resolve it in the current session: diagnose the root cause, fix it, and land the change as a single squash-or-new commit. |
+| [smoke-fail](smoke-fail/SKILL.md) | Triage a failed live-qa scenario and resolve it in the current session: diagnose the root cause, fix it, and land the change as a single squash-or-new commit. |
 | [software-architecture](software-architecture/SKILL.md) | Guide for quality focused software architecture. This skill should be used when users want to write code, design architecture, analyze code, in any case that relates to software development. |
+| [status](status/SKILL.md) | Track project state, bootstrap STATUS.md, orient across sessions, and prevent context loss. |
 | [tdd](tdd/SKILL.md) | Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests. |
 | [teach](teach/SKILL.md) | Teach the user a new skill or concept, within this workspace. |
 | [to-questionnaire](to-questionnaire/SKILL.md) | Turn a decision you can't fully answer into a questionnaire for someone else to fill in. |
