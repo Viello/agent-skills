@@ -97,8 +97,9 @@ Surface the URL (and the `?variant=` keys). The user will flip through whenever 
 
 ### 6. Capture the answer and clean up
 
-Once a variant has won, capture the answer (which variant and why), then capture the prototype the way the [SKILL](SKILL.md) describes. Fold the winner into the real code and move the rest onto the throwaway branch, not into main:
+Once a variant has won, capture the answer (which variant and why) and document all design directives in the ticket or issue. The prototype session ends here. Do not begin production implementation or touch live state in the prototype session without explicit instruction.
 
+When implementation is requested:
 - **Sub-shape A**: fold the winner into the existing page; drop the losing variants and the switcher from main.
 - **Sub-shape B**: promote the winning variant to a real route; drop the throwaway route and the switcher from main.
 
@@ -106,6 +107,7 @@ The full set of variants is the primary source, so it lands on the throwaway bra
 
 ## Anti-patterns
 
+- **Prematurely transitioning to implementation.** A prototype session concludes once variants are runnable and the design decision is captured. Do not begin production implementation or touch live database state in the same session without explicit instruction.
 - **Variants that differ only in colour or copy.** That's a tweak, not a prototype. Real variants disagree about structure.
 - **Sharing too much code between variants.** A shared `<Header>` is fine; a shared `<Layout>` defeats the point. Each variant should be free to throw out the layout.
 - **Wiring variants to real mutations.** Read-only prototypes are fine. If a variant needs to mutate, point it at a stub: the question is "what should this look like", not "does the backend work".
