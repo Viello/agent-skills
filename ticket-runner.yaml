@@ -19,3 +19,6 @@ model:
 
 lifecycle:
   approval_mode: human
+
+ui:
+  session_terminal: "wt.exe"
