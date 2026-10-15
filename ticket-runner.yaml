@@ -1,0 +1,19 @@
+# ticket-runner.yaml
+# Project overlay configuration for Ticket Runner
+
+project:
+  name: agent-skills
+  base_branch: main
+  branch: agent/ticket-runner
+verification:
+  test_cmd: >-
+    python -c "import glob,yaml; fs=glob.glob('*/agents/openai.yaml'); [yaml.safe_load(open(f,encoding='utf-8')) for f in fs]; print('validated %d openai.yaml files' % len(fs))"
+  build_cmd: ''
+worker:
+  provider: antigravity
+
+model:
+  models: []
+
+lifecycle:
+  approval_mode: human

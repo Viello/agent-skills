@@ -1,2 +1,4 @@
 ﻿.agent/
 docs/tickets/.queue.lock
+.agents/
+observations/
