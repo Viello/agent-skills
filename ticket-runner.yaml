@@ -13,7 +13,9 @@ worker:
   provider: antigravity
 
 model:
-  models: []
+  models:
+    - id: gemini-3.8-flash-high
+      label: Gemini 3.8 Flash (High)
 
 lifecycle:
   approval_mode: human
