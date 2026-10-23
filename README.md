@@ -32,18 +32,21 @@ curl -sL https://github.com/Viello/agent-skills/archive/refs/heads/main.tar.gz |
 
 ## Canonical Skills Index
 
-This repository currently distributes **45** canonical skills:
+This repository currently distributes **48** canonical skills:
 
 | Skill | Description |
 | :--- | :--- |
 | [ask-matt](ask-matt/SKILL.md) | Ask which skill or flow fits your situation. A router over the skills in this repo. |
+| [brainstorming](brainstorming/SKILL.md) | Explore user intent and formulate a clear design specification before writing code or planning. |
 | [claude-handoff](claude-handoff/SKILL.md) | Hand the current conversation off to a fresh background agent that picks up the work immediately. |
 | [clean-architecture](clean-architecture/SKILL.md) | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "ports and adapters (hexagonal)", "onion architecture", "screaming architecture", "where should business logic go", "decouple from the database", "swap the framework without a rewrite", or "keep business rules independent". Also trigger when deciding which layer code belongs in, isolating core logic from infrastructure, defining module boundaries, or debating whether the framework should call your code or the reverse. Covers component principles, boundaries, and SOLID. For code-level quality, see clean-code. For domain modeling, see domain-driven-design. |
 | [code-review](code-review/SKILL.md) | Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to "review since X". |
 | [codebase-design](codebase-design/SKILL.md) | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. |
 | [create-verification-skill](create-verification-skill/SKILL.md) | Inspect a target project directory and scaffold a tailored verify-<app> verification skill implementing the 5-step lifecycle contract, harness stubs, and feature maps. |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
+| [diagnosing-superpowers](diagnosing-superpowers/SKILL.md) | Pin down what went wrong in a superpowers session and build an evidence-backed diagnostic report. |
 | [domain-modeling](domain-modeling/SKILL.md) | Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR. |
+| [finishing-a-development-branch](finishing-a-development-branch/SKILL.md) | Run a final test verification, present integration choices, and clean up the development branch. |
 | [git-guardrails-claude-code](git-guardrails-claude-code/SKILL.md) | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code. |
 | [grill-me](grill-me/SKILL.md) | A relentless interview to sharpen a plan or design. |
 | [grill-with-docs](grill-with-docs/SKILL.md) | A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go. |
