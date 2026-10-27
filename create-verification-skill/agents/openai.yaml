@@ -1,0 +1,5 @@
+interface:
+  display_name: "Create Verification Skill"
+  short_description: "Scaffold a tailored verification skill and harness stubs"
+policy:
+  allow_implicit_invocation: false

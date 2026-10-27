@@ -1,0 +1,5 @@
+interface:
+  display_name: "Live QA"
+  short_description: "Drive live app verification scenarios and record evidence"
+policy:
+  allow_implicit_invocation: false

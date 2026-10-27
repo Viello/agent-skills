@@ -1,6 +1,7 @@
 # T101 — Add Codex Interface Metadata to Catalog Skills Currently Missing It
 **Type:** wayfinder:task (AFK)
-Status: pending
+Status: completed
+Completed: 2026-10-27T14:47:17Z
 Spec: docs/specs/01-runner-live-test-bootstrap.md
 Blocked by: none
 Reasoning: medium
