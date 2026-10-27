@@ -92,7 +92,9 @@ Each skill conforms to the standard agent skill specification:
 <skill-name>/
 ├── SKILL.md            # Instruction manual with YAML frontmatter (name, description)
 ├── scripts/            # (Optional) Deterministic automation or validation scripts
-└── references/         # (Optional) Deep architectural references, schemas, or templates
+├── references/         # (Optional) Deep architectural references, schemas, or templates
+└── agents/             # (Optional) Harness-specific interface metadata
+    └── openai.yaml     # Codex app display name, short description, optional policy
 ```
 
 ## Contributing
@@ -100,6 +102,7 @@ Each skill conforms to the standard agent skill specification:
 1. Ensure all skills contain valid YAML frontmatter with `name` and `description`.
 2. Keep instructions actionable, deterministic, and test-first.
 3. Never commit API keys, personal access tokens, or project-specific secrets.
+4. Include `agents/openai.yaml` unless the skill is intentionally in-agent-only with documented rationale.
 
 ## License
 

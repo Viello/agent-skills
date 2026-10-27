@@ -1,6 +1,7 @@
 # T102 — Document `agents/openai.yaml` in the Catalog's Skill Directory Anatomy
 **Type:** wayfinder:task (AFK)
-Status: pending
+Status: completed
+Completed: 2026-10-27T14:51:44Z
 Spec: docs/specs/01-runner-live-test-bootstrap.md
 Blocked by: T101
 Reasoning: medium
