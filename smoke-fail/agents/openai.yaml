@@ -1,0 +1,5 @@
+interface:
+  display_name: "Smoke Fail"
+  short_description: "Diagnose and fix a failed live-qa scenario in one session"
+policy:
+  allow_implicit_invocation: false

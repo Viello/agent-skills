@@ -32,28 +32,29 @@ curl -sL https://github.com/Viello/agent-skills/archive/refs/heads/main.tar.gz |
 
 ## Canonical Skills Index
 
-This repository currently distributes **48** canonical skills:
+This repository currently distributes **50** canonical skills:
 
 | Skill | Description |
 | :--- | :--- |
 | [ask-matt](ask-matt/SKILL.md) | Ask which skill or flow fits your situation. A router over the skills in this repo. |
-| [brainstorming](brainstorming/SKILL.md) | Explore user intent and formulate a clear design specification before writing code or planning. |
+| [brainstorming](brainstorming/SKILL.md) | You MUST use this before any creative work - creating features, building components, adding functionality, modifying behavior, or planning anything new, in software or out of it (a talk, a business, a renovation). |
 | [claude-handoff](claude-handoff/SKILL.md) | Hand the current conversation off to a fresh background agent that picks up the work immediately. |
 | [clean-architecture](clean-architecture/SKILL.md) | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "ports and adapters (hexagonal)", "onion architecture", "screaming architecture", "where should business logic go", "decouple from the database", "swap the framework without a rewrite", or "keep business rules independent". Also trigger when deciding which layer code belongs in, isolating core logic from infrastructure, defining module boundaries, or debating whether the framework should call your code or the reverse. Covers component principles, boundaries, and SOLID. For code-level quality, see clean-code. For domain modeling, see domain-driven-design. |
-| [code-review](code-review/SKILL.md) | Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to "review since X". |
+| [code-review](code-review/SKILL.md) | Review the changes since a fixed point (commit, branch, tag, or merge-base) along three axes: Standards, Spec, and Security (referencing security-review). Runs axes in parallel sub-agents and aggregates findings with severity-gated escalation. |
 | [codebase-design](codebase-design/SKILL.md) | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. |
 | [create-verification-skill](create-verification-skill/SKILL.md) | Inspect a target project directory and scaffold a tailored verify-<app> verification skill implementing the 5-step lifecycle contract, harness stubs, and feature maps. |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
-| [diagnosing-superpowers](diagnosing-superpowers/SKILL.md) | Pin down what went wrong in a superpowers session and build an evidence-backed diagnostic report. |
+| [diagnosing-superpowers](diagnosing-superpowers/SKILL.md) | Use when a superpowers session went wrong and your human partner wants to know why — repeated work, ignored plans, stumbles, poor results, a skill that didn't fire, "it took too long", "why is it so expensive", "what is it doing" — or wants to build a bug report for the superpowers maintainers, for the current session or a past one identified by id or path, on any harness. |
 | [domain-modeling](domain-modeling/SKILL.md) | Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR. |
-| [finishing-a-development-branch](finishing-a-development-branch/SKILL.md) | Run a final test verification, present integration choices, and clean up the development branch. |
+| [finishing-a-development-branch](finishing-a-development-branch/SKILL.md) | Use when implementation is complete, all tests pass, and you need to decide how to integrate the work |
 | [git-guardrails-claude-code](git-guardrails-claude-code/SKILL.md) | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code. |
 | [grill-me](grill-me/SKILL.md) | A relentless interview to sharpen a plan or design. |
 | [grill-with-docs](grill-with-docs/SKILL.md) | A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go. |
 | [grilling](grilling/SKILL.md) | Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases. |
 | [handoff](handoff/SKILL.md) | Compact the current conversation into a handoff document for another agent to pick up. |
-| [implement](implement/SKILL.md) | Implement a piece of work based on a spec or set of tickets. |
+| [implement](implement/SKILL.md) | Implement a piece of work based on a spec or set of tickets in a Human+AI interactive pairing session. |
 | [implement-spec](implement-spec/SKILL.md) | Implement a specification in code. |
+| [implement-ticket-runner](implement-ticket-runner/SKILL.md) | Autonomous worker execution skill for Ticket Runner queues: test-driven implementation at jump-start seams, 3-axis review, checkbox criteria acknowledgement, and explicit signal durability. |
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick. |
 | [live-qa](live-qa/SKILL.md) | Human-driven live verification: the human drives the running app through scenarios while the agent records verdicts as durable evidence. |
 | [loop-me](loop-me/SKILL.md) | Grill me about specs for the workflows I want to build, within this workspace. |
@@ -75,7 +76,8 @@ This repository currently distributes **48** canonical skills:
 | [teach](teach/SKILL.md) | Teach the user a new skill or concept, within this workspace. |
 | [to-questionnaire](to-questionnaire/SKILL.md) | Turn a decision you can't fully answer into a questionnaire for someone else to fill in. |
 | [to-spec](to-spec/SKILL.md) | Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed. |
-| [to-tickets](to-tickets/SKILL.md) | Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on a real tracker). |
+| [to-ticket-runner](to-ticket-runner/SKILL.md) | Break a plan, spec, or conversation into canonical 5-section tickets for autonomous Ticket Runner queues, with bold-label headers, orientation jump-starts, and checkbox acceptance criteria. |
+| [to-tickets](to-tickets/SKILL.md) | Break a plan, spec, or conversation into compact Human+AI interactive tickets (Specimen B) with status flow, inline orientation jump-starts, and acceptance checkboxes. |
 | [triage](triage/SKILL.md) | Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs. |
 | [wait-what](wait-what/SKILL.md) | Stop. That last message did not land: re-pitch it. |
 | [wayfinder](wayfinder/SKILL.md) | Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear. |
@@ -95,7 +97,9 @@ Each skill conforms to the standard agent skill specification:
 <skill-name>/
 ├── SKILL.md            # Instruction manual with YAML frontmatter (name, description)
 ├── scripts/            # (Optional) Deterministic automation or validation scripts
-└── references/         # (Optional) Deep architectural references, schemas, or templates
+├── references/         # (Optional) Deep architectural references, schemas, or templates
+└── agents/             # (Optional) Harness-specific interface metadata
+    └── openai.yaml     # Codex app display name, short description, optional policy
 ```
 
 ## Contributing
