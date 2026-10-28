@@ -81,6 +81,7 @@ Do NOT close or modify any parent issue.
 
 **Status:** ready-for-agent
 **Labels:** ready-for-agent
+Reasoning: medium  # optional: low | medium | high | max (provider-specific; omit to use config default)
 **Security:** required (optional: include when slice touches trust boundaries / auth / RLS / subprocesses / secrets)
 **Parent:** docs/specs/<spec-slug>.md
 
