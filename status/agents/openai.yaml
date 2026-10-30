@@ -1,0 +1,3 @@
+interface:
+  display_name: "Status"
+  short_description: "Track project state and orient across development sessions"
