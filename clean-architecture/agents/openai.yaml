@@ -1,3 +1,0 @@
-interface:
-  display_name: "Clean Architecture"
-  short_description: "Enforce clean architecture layers and inward dependencies"

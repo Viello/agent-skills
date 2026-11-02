@@ -1,3 +1,0 @@
-interface:
-  display_name: "Security Review"
-  short_description: "Audit code for vulnerabilities, exposed secrets, and risky defaults"
