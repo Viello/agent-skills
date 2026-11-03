@@ -32,7 +32,7 @@ curl -sL https://github.com/Viello/agent-skills/archive/refs/heads/main.tar.gz |
 
 ## Canonical Skills Index
 
-This repository currently distributes **50** canonical skills:
+This repository currently distributes **54** canonical skills:
 
 | Skill | Description |
 | :--- | :--- |
@@ -41,9 +41,11 @@ This repository currently distributes **50** canonical skills:
 | [claude-handoff](claude-handoff/SKILL.md) | Hand the current conversation off to a fresh background agent that picks up the work immediately. |
 | [clean-architecture](clean-architecture/SKILL.md) | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "ports and adapters (hexagonal)", "onion architecture", "screaming architecture", "where should business logic go", "decouple from the database", "swap the framework without a rewrite", or "keep business rules independent". Also trigger when deciding which layer code belongs in, isolating core logic from infrastructure, defining module boundaries, or debating whether the framework should call your code or the reverse. Covers component principles, boundaries, and SOLID. For code-level quality, see clean-code. For domain modeling, see domain-driven-design. |
 | [code-review](code-review/SKILL.md) | Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards and Spec. Adds a Security axis only when the ticket marks Security as required or the user asks. Runs active axes in parallel sub-agents and aggregates findings with severity-gated escalation. |
+| [code-review-ticket-runner](code-review-ticket-runner/SKILL.md) | Autonomous worker code review skill for Ticket Runner queues: uncommitted working-tree review along Standards and Spec axes with a conditional Security axis, and question signal escalation on blockers. |
 | [codebase-design](codebase-design/SKILL.md) | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary. |
 | [create-verification-skill](create-verification-skill/SKILL.md) | Inspect a target project directory and scaffold a tailored verify-<app> verification skill implementing the 5-step lifecycle contract, harness stubs, and feature maps. |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md) | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. |
+| [diagnosing-bugs-ticket-runner](diagnosing-bugs-ticket-runner/SKILL.md) | Autonomous worker diagnosis skill for Ticket Runner queues: build tight feedback loops, execute the Stuck-Test-Suite Protocol (HANG, CASCADE, ENV, FLAKY), withhold ready signals on stuck suites, and escalate via question signals. |
 | [diagnosing-superpowers](diagnosing-superpowers/SKILL.md) | Use when a superpowers session went wrong and your human partner wants to know why — repeated work, ignored plans, stumbles, poor results, a skill that didn't fire, "it took too long", "why is it so expensive", "what is it doing" — or wants to build a bug report for the superpowers maintainers, for the current session or a past one identified by id or path, on any harness. |
 | [domain-modeling](domain-modeling/SKILL.md) | Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR. |
 | [finishing-a-development-branch](finishing-a-development-branch/SKILL.md) | Use when implementation is complete, all tests pass, and you need to decide how to integrate the work |
@@ -52,6 +54,7 @@ This repository currently distributes **50** canonical skills:
 | [grill-with-docs](grill-with-docs/SKILL.md) | A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go. |
 | [grilling](grilling/SKILL.md) | Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases. |
 | [handoff](handoff/SKILL.md) | Compact the current conversation into a handoff document for another agent to pick up. |
+| [handoff-ticket-runner](handoff-ticket-runner/SKILL.md) | Autonomous worker context handoff skill for Ticket Runner queues: writes structured handoff checkpoints directly to .agent/checkpoints/<ticket_id>/handoff.md without touching STATUS.md or prompting. |
 | [implement](implement/SKILL.md) | Implement a piece of work based on a spec or set of tickets in a Human+AI interactive pairing session. |
 | [implement-spec](implement-spec/SKILL.md) | Implement a specification in code. |
 | [implement-ticket-runner](implement-ticket-runner/SKILL.md) | Autonomous worker execution skill for Ticket Runner queues: test-driven implementation at jump-start seams, Standards and Spec review with a conditional Security axis, checkbox criteria acknowledgement, and explicit signal durability. |
@@ -66,6 +69,7 @@ This repository currently distributes **50** canonical skills:
 | [retro](retro/SKILL.md) | Conduct a retrospective on a coding session. |
 | [scaffold-exercises](scaffold-exercises/SKILL.md) | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section. |
 | [security-review](security-review/SKILL.md) | Reviews application code for security vulnerabilities, unsafe data handling, secret exposure, and risky defaults when a ticket or user explicitly requests a security review. |
+| [security-review-ticket-runner](security-review-ticket-runner/SKILL.md) | Autonomous worker security review skill for Ticket Runner queues: audit uncommitted changes across trust boundaries, remediate vulnerabilities, and escalate blockers via question signals. |
 | [setup-matt-pocock-skills](setup-matt-pocock-skills/SKILL.md) | Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills. |
 | [setup-pre-commit](setup-pre-commit/SKILL.md) | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing. |
 | [setup-ts-deep-modules](setup-ts-deep-modules/SKILL.md) | Wire dependency-cruiser into a TypeScript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. User-invoked. |
